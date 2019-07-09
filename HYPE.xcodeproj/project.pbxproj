@@ -14,6 +14,7 @@
 		53D0C4D022D4F30400D42E5A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D0C4CF22D4F30400D42E5A /* CloudKit.framework */; };
 		53D0C4D722D4F7EF00D42E5A /* HypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0C4D622D4F7EF00D42E5A /* HypeTableViewController.swift */; };
 		53D0C4D922D4F9F800D42E5A /* Hype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0C4D822D4F9F800D42E5A /* Hype.swift */; };
+		53D0C4DB22D5002600D42E5A /* HypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0C4DA22D5002600D42E5A /* HypeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		53D0C4CF22D4F30400D42E5A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		53D0C4D622D4F7EF00D42E5A /* HypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeTableViewController.swift; sourceTree = "<group>"; };
 		53D0C4D822D4F9F800D42E5A /* Hype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hype.swift; sourceTree = "<group>"; };
+		53D0C4DA22D5002600D42E5A /* HypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		53D0C4D322D4F73A00D42E5A /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				53D0C4DA22D5002600D42E5A /* HypeController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53D0C4BC22D4F2E800D42E5A /* AppDelegate.swift in Sources */,
+				53D0C4DB22D5002600D42E5A /* HypeController.swift in Sources */,
 				53D0C4D722D4F7EF00D42E5A /* HypeTableViewController.swift in Sources */,
 				53D0C4D922D4F9F800D42E5A /* Hype.swift in Sources */,
 			);

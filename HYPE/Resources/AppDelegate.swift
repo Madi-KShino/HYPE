@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //TESTING
+        let testHype = "TESTING!"
+        let hype = HypeController()
+        hype.saveHype(text: testHype) { (success) in
+            if success {
+                print("it worked")
+            }
+        }
         return true
     }
 
