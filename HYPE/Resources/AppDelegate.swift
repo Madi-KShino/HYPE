@@ -18,13 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //TESTING
-        let testHype = "TESTING!"
-        let hype = HypeController()
-        hype.saveHype(text: testHype) { (success) in
-            if success {
-                print("it worked")
-            }
-        }
+//        let testHype = "TESTING!"
+//        let hype = HypeController()
+//        hype.saveHype(text: testHype) { (success) in
+//            if success {
+//                print("it worked")
+//            }
+//        }
+//        hype.fetchHype { (success) in
+//            for hype in hype.hypes {
+//                print(hype.hypeText)
+//            }
+//        }
         return true
     }
 

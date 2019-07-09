@@ -13,6 +13,7 @@ class HypeController {
     
     //PROPERTIES
     let publicDataBase = CKContainer.default().publicCloudDatabase
+    static let sharedInstance = HypeController()
     var hypes: [Hype] = []
     
     //CRUD FUNCTIONS
@@ -31,18 +32,35 @@ class HypeController {
                 return
             }
             //append hype created to local souce of truth
-            self.hypes.append(hype)
+            self.hypes.insert(hype, at: 0)
             completion(true)
         }
     }
     
     //FETCH
     func fetchHype(completion: @escaping (Bool) -> Void) {
-        
+        //create predicate for query
+        let predicate = NSPredicate(value: true)
+        //create query with a record type (from model) and predicate
+        let query = CKQuery(recordType: Constants.recordTypeKey, predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: Constants.recordTimeStampKey, ascending: false)]
+        //perform query through the public database (using query, zone, completion handler)
+        publicDataBase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print("Error in \(#function): \(error.localizedDescription) /n---/n \(error)")
+                completion(false)
+                return
+            }
+            //convert records (if there are any) into hypes
+            guard let records = records else { completion(false); return }
+            let hypes = records.compactMap({Hype(ckRecord: $0)})
+            self.hypes = hypes
+            completion(true)
+        }
     }
     
     //SUBSCRIPTION
-//    func subscribeToRemoteNotifications(completion: @escaping (Error?) -> Void) {
-//        <#function body#>
-//    }
+    //    func subscribeToRemoteNotifications(completion: @escaping (Error?) -> Void) {
+    //        <#function body#>
+    //    }
 }

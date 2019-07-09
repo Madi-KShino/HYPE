@@ -14,7 +14,7 @@ import CloudKit
 struct Constants {
     static let recordTypeKey = "Hype"
     fileprivate static let recordTextKey = "Text"
-    fileprivate static let recordTimeStampKey = "Timestamp"
+    static let recordTimeStampKey = "Timestamp"
 }
 
 class Hype {
