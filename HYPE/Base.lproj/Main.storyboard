@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hype Table View Controller-->
+        <!--<( ^ o ^ )>-->
         <scene sceneID="K5s-Hr-HJM">
             <objects>
                 <tableViewController id="O7S-EO-Zer" customClass="HypeTableViewController" customModule="HYPE" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                                             <rect key="frame" x="20" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.34755655340000002" green="0.23170516869999999" blue="0.27032334149999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -48,7 +48,7 @@
                             <outlet property="delegate" destination="O7S-EO-Zer" id="1pr-Hi-NKV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="85g-RR-0wf">
+                    <navigationItem key="navigationItem" title="&lt;( ^ o ^ )&gt;" id="85g-RR-0wf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="H5P-cg-Heg">
                             <connections>
                                 <action selector="addButtonTapped:" destination="O7S-EO-Zer" id="71U-c1-ns5"/>
