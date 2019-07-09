@@ -11,9 +11,16 @@ import CloudKit
 
 class HypeTableViewController: UITableViewController, UITextFieldDelegate {
 
+    var refresh: UIRefreshControl = UIRefreshControl()
+    
     //LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refresh.attributedTitle = NSAttributedString(string: "Pull down to refresh")
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.tableView.addSubview(refresh)
+        
         loadData()
     }
     
@@ -23,11 +30,12 @@ class HypeTableViewController: UITableViewController, UITextFieldDelegate {
     }
     
     //HELPER FUNCTIONS
-    func loadData() {
+    @objc func loadData() {
         HypeController.sharedInstance.fetchHype { (success) in
             if success {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.refresh.endRefreshing()
                 }
             }
         }
@@ -73,15 +81,6 @@ class HypeTableViewController: UITableViewController, UITextFieldDelegate {
         return cell
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -91,31 +90,6 @@ class HypeTableViewController: UITableViewController, UITextFieldDelegate {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

@@ -60,7 +60,25 @@ class HypeController {
     }
     
     //SUBSCRIPTION
-    //    func subscribeToRemoteNotifications(completion: @escaping (Error?) -> Void) {
-    //        <#function body#>
-    //    }
+    func subscribeToRemoteNotifications(completion: @escaping (Error?) -> Void) {
+        let predicate = NSPredicate(value: true)
+        //create subscription with a record type, predicate, witth options
+        let subscription = CKQuerySubscription(recordType: Constants.recordTypeKey, predicate: predicate, options: .firesOnRecordCreation)
+        //access CKSubscription notification info & customize properties
+        let notificationInfo = CKSubscription.NotificationInfo()
+        notificationInfo.alertBody = "Get Hyped!"
+        notificationInfo.shouldBadge = true
+        notificationInfo.soundName = "default"
+        //Set edited values to the already existing subscription
+        subscription.notificationInfo = notificationInfo
+        //add to database
+        publicDataBase.save(subscription) { (_, error) in
+            if let error = error {
+                print("Error in \(#function): \(error.localizedDescription) /n---/n \(error)")
+                completion(error)
+                return
+            }
+            completion(nil)
+        }
+    }
 }
