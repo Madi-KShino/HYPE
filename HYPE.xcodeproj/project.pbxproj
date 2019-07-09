@@ -13,6 +13,7 @@
 		53D0C4C622D4F2EA00D42E5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D0C4C422D4F2EA00D42E5A /* LaunchScreen.storyboard */; };
 		53D0C4D022D4F30400D42E5A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D0C4CF22D4F30400D42E5A /* CloudKit.framework */; };
 		53D0C4D722D4F7EF00D42E5A /* HypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0C4D622D4F7EF00D42E5A /* HypeTableViewController.swift */; };
+		53D0C4D922D4F9F800D42E5A /* Hype.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D0C4D822D4F9F800D42E5A /* Hype.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		53D0C4CD22D4F30200D42E5A /* HYPE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HYPE.entitlements; sourceTree = "<group>"; };
 		53D0C4CF22D4F30400D42E5A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		53D0C4D622D4F7EF00D42E5A /* HypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HypeTableViewController.swift; sourceTree = "<group>"; };
+		53D0C4D822D4F9F800D42E5A /* Hype.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hype.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +63,10 @@
 			children = (
 				53D0C4CD22D4F30200D42E5A /* HYPE.entitlements */,
 				53D0C4BF22D4F2E800D42E5A /* Main.storyboard */,
-				53D0C4D522D4F74800D42E5A /* Helpers+Extensions */,
 				53D0C4D422D4F74200D42E5A /* Model */,
 				53D0C4D322D4F73A00D42E5A /* Model Controller */,
 				53D0C4D222D4F72600D42E5A /* View Controller */,
+				53D0C4D522D4F74800D42E5A /* Helpers+Extensions */,
 				53D0C4D122D4F31600D42E5A /* Resources */,
 			);
 			path = HYPE;
@@ -107,6 +109,7 @@
 		53D0C4D422D4F74200D42E5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53D0C4D822D4F9F800D42E5A /* Hype.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				53D0C4BC22D4F2E800D42E5A /* AppDelegate.swift in Sources */,
 				53D0C4D722D4F7EF00D42E5A /* HypeTableViewController.swift in Sources */,
+				53D0C4D922D4F9F800D42E5A /* Hype.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
